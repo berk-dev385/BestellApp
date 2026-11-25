@@ -1,5 +1,5 @@
 :root {
-  --orange: #e76c16;
+  --orange: #e76c1f;
   --dark: #363534;
   --cream: #fdeadc;
   --page-width: 1440px;
@@ -23,10 +23,62 @@ body {
 
 button {
   font-family: inherit;
-  curosr: pointer;
+  cursor: pointer;
 }
 
 button:focus-visible,
 a:focus-visible {
   outline: 3px solid var(--orange);
 }
+
+.site-header {
+  /* Gestaltet die vorhandene Kopfzeile. */
+  height: 128px; /* Legt die Höhe der Kopfzeile fest. */
+  padding: 0 clamp(24px, 8vw, 119px); /* Erzeugt flexible seitliche Innenabstände. */
+  background: var(--orange); /* Verwendet zentral gespeicherten Orangeton. */
+} /* Beendet die Gestaltung der Kopfzeile. */
+
+.brand-symbol {
+  /* Wählt das Markenlogo im Header aus. */
+  width: 93px; /* Legt die Breite des Markenlogos fest. */
+  height: auto; /* Erhält das ursprüngliche Seitenverhältnis des Logos. */
+} /* Beendet die Gestaltung des Markenlogos. */
+
+.desktop-menu-icon {
+  /* Wählt das Menüsymbol im Header aus. */
+  width: 45px; /* Legt die Breite des Menüsymbols fest. */
+  height: auto; /* Berechnet die Höhe passend zur Bildbreite. */
+} /* Beendet die Gestaltung des Menüsymbols. */
+
+.hero-section {
+  /* Gestaltet den gesamten Restaurantabschnitt. */
+  padding-bottom: 32px; /* Erzeugt zusätzlichen Innenabstand am unteren Ende. */
+} /* Beendet die Gestaltung des Restaurantabschnitts. */
+
+.hero-image-wrap {
+  /* Wählt den gemeinsamen Container der beiden Restaurantbilder aus. */
+  position: relative; /* Macht den Container zum Positionsbezug für das absolute Logo. */
+  margin-bottom: 112px; /* Reserviert unter dem Bild Platz für das überstehende Logo und weiteren Abstand. */
+} /* Beendet die Gestaltung des Bildcontainers. */
+
+.restaurant-hero {
+  /* Gestaltet das große Restaurantfoto. */
+  display: block; /* Stellt das Bild als Blockelement ohne typischen Inline-Grundlinienabstand dar. */
+  width: 100%; /* Nutzt die gesamte verfügbare Breite des Bildcontainers. */
+  height: 439px; /* Legt die Höhe des Restaurantfotos fest. */
+  object-fit: cover; /* Füllt die Bildfläche proportional aus und beschneidet bei Bedarf das Motiv. */
+} /* Beendet die Gestaltung des Restaurantfotos. */
+
+.restaurant-logo {
+  /* Gestaltet das runde BurgerHouse-Logo. */
+  position: absolute; /* Nimmt das Logo aus dem normalen Dokumentfluss. */
+  bottom: -65px; /* Positioniert den unteren Logorand 65 Pixel unter dem Bildcontainer. */
+  left: 50%; /* Positioniert zunächst den linken Logorand in der horizontalen Mitte des Containers. */
+  transform: translateX(
+    -50%
+  ); /* Verschiebt das Logo um die Hälfte seiner eigenen Breite nach links. */
+  width: 200px; /* Legt die Gesamtbreite des Logos fest. */
+  height: 200px; /* Legt die Gesamthöhe des Logos fest. */
+  object-fit: cover; /* Füllt die verfügbare Bildfläche proportional aus. */
+  border-radius: 50%; /* Formt das Logo zu einem Kreis. */
+} /* Beendet die Gestaltung des Restaurantlogos. */

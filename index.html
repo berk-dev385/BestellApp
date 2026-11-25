@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BurgerHouse</title>
 
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <link rel="icon" href="favicon.png" type="image/png" />
 
     <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/basket.css" />
     <link rel="stylesheet" href="styles/responsive.css" />
@@ -17,7 +16,47 @@
   <body>
     <div class="app-shell mx-auto">
       <!-- Erstellt einen horizontal zentrierten Seitenrahmen. -->
+
+      <header
+        class="site-header d-flex align-items-center justify-content-between"
+      >
+        <!-- Erstellt die Kopfzeile und richtet ihre Inhalte mit Bootstrap-Flexbox aus. -->
+        <img
+          class="brand-symbol"
+          src="assets/icons/header-logo.svg"
+          alt="Bestell App"
+        />
+        <!-- Bindet das Markenlogo ein. -->
+
+        <img class="desktop-menu-icon" src="assets/icons/menu.svg" alt="" />
+        <!-- Bindet das dekorative Menüsymbol ein. -->
+      </header>
+
+      <section class="hero-section" id="top">
+        <!-- Erstellt den Bereich für die Restaurantpräsentation. -->
+
+        <div class="hero-image-wrap">
+          <!-- Gruppiert das Restaurantfoto und das Restaurantlogo. -->
+
+          <img
+            class="restaurant-hero"
+            src="assets/images/hero.webp"
+            alt="Burger, Pizza und Gerichte"
+          />
+          <!-- Bindet das große Restaurantfoto ein. -->
+
+          <img
+            class="restaurant-logo"
+            src="assets/images/logo-burger.png"
+            alt="BurgerHouse Logo"
+          />
+          <!-- Bindet das Restaurantlogo ein. -->
+        </div>
+        <!-- Beendet den gemeinsamen Bildcontainer. -->
+      </section>
+      <!-- HERO_END -->
     </div>
+    <!-- SHELL_END -->
 
     <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
     <!-- Lädt die Bootstrap-Funktionalitäten. -->
