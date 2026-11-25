@@ -29,4 +29,20 @@
     height: 120px; /* Reduziert die Gesamthöhe des Logos auf 120 Pixel. */
     bottom: -60px; /* Positioniert die untere Hälfte des Logos außerhalb des Bildcontainers. */
   } /* Beendet die mobile Logogestaltung. */
+
+  .restaurant-name-row {
+    /* Passt die Anordnung von Restaurantname und Bewertung an. */
+    flex-direction: column-reverse; /* Platziert die Bewertung oberhalb des Titels. */
+    gap: 8px; /* Reduziert den Abstand zwischen beiden Elementen. */
+  }
+
+  .restaurant-name-row h1 {
+    /* Passt die Überschrift für kleinere Bildschirme an. */
+    font-size: 40px; /* Reduziert die Schriftgröße von 48 auf 40 Pixel. */
+  }
+
+  .restaurant-details p {
+    /* Passt die Absätze der Restaurantinformationen an. */
+    font-size: 22px; /* Reduziert die allgemeine Absatzgröße von 24 auf 22 Pixel. */
+  }
 } /* Beendet die Media Query und alle darin enthaltenen mobilen CSS-Regeln. */

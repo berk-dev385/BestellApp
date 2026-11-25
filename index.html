@@ -7,6 +7,16 @@
 
     <link rel="icon" href="favicon.png" type="image/png" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Bereitet die Verbindung zum Google-Fonts-Stylesheet vor. -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Bereitet die Verbindung zum Server mit den eigentlichen Schriftdateien vor. -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Palanquin:wght@400;500;600;700&family=Palanquin+Dark:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bindet beide Schriftfamilien mit den benötigten Schriftstärken ein. -->
+
     <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/basket.css" />
@@ -53,6 +63,47 @@
           <!-- Bindet das Restaurantlogo ein. -->
         </div>
         <!-- Beendet den gemeinsamen Bildcontainer. -->
+
+        <div class="restaurant-details text-center">
+          <!-- Fasst sämtliche Restaurantinformationen zusammen und zentriert den Text. -->
+
+          <div
+            class="restaurant-name-row d-flex align-items-center justify-content-center"
+          >
+            <!-- Ordnet Restaurantname und Bewertung nebeneinander und mittig an. -->
+
+            <h1><span>Burger</span>House</h1>
+            <!-- Definiert die wichtigste inhaltliche Überschrift unserer Webseite. -->
+            <!-- Der Span trennt "Burger" farblich von House innerhalb derselben Überschrift. -->
+
+            <span class="rating d-inline-flex align-items-center">
+              <!-- Gruppiert den Stern und die Bewertungszahlen in einem Flex-Container. -->
+
+              <img
+                src="assets/icons/star.svg"
+                alt="Rating"
+                width="24"
+                height="24"
+              />
+              <!-- Bindet den Bewertungsstern mit einer Größe von 24 mal 24 Pixeln ein. -->
+
+              <strong>4,1</strong>
+              <!-- Hebt die durchschnittliche Bewertung inhaltlich hervor. -->
+
+              <span>(317)</span>
+              <!-- Zeigt die Anzahl der abgegebenen Bewertungen an. -->
+            </span>
+            <!-- Beendet die gemeinsame Bewertungsgruppe. -->
+          </div>
+          <!-- Beendet die Zeile mit dem Restaurantnamen und der Bewertung. -->
+
+          <p>The best of Burgers, Pizza, and Greens, all in one great place.</p>
+          <!-- Beschreibt das kulinarische Angebot des Restaurants. -->
+
+          <p class="delivery-info">Delivery fee: 4,99€</p>
+          <!-- Informiert über die festgelegte Liefergebühr. -->
+        </div>
+        <!-- Beendet den gesamten Informationsbereich des Restaurants. -->
       </section>
       <!-- HERO_END -->
     </div>
