@@ -1,0 +1,32 @@
+:root {
+  --orange: #e76c16;
+  --dark: #363534;
+  --cream: #fdeadc;
+  --page-width: 1440px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: White;
+  color: var(--dark);
+  font-family: Palanquin, sans-serif;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: var(--page-width);
+}
+
+button {
+  font-family: inherit;
+  curosr: pointer;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--orange);
+}
