@@ -82,3 +82,53 @@ a:focus-visible {
   object-fit: cover; /* Füllt die verfügbare Bildfläche proportional aus. */
   border-radius: 50%; /* Formt das Logo zu einem Kreis. */
 } /* Beendet die Gestaltung des Restaurantlogos. */
+
+.restaurant-details {
+  /* Gestaltet den gesamten Bereich der Restaurantinformationen. */
+  max-width: 872px; /* Begrenzt die maximale Breite des Informationsbereichs. */
+  margin: 0 auto; /* Zentriert den Bereich horizontal innerhalb seines Elternelements. */
+  padding: 0 16px; /* Schafft links und rechts jeweils 16 Pixel Innenabstand. */
+} /* Beendet die Gestaltung des Informationsbereichs. */
+
+.restaurant-name-row {
+  /* Gestaltet den gemeinsamen Container von Restaurantname und Bewertung. */
+  gap: 26px; /* Erzeugt einen Abstand von 26 Pixeln zwischen den Flexelementen. */
+  flex-wrap: wrap; /* Erlaubt den Elementen bei Platzmangel einen Zeilenumbruch. */
+} /* Beendet die Gestaltung der Namenszeile. */
+
+.restaurant-name-row h1 {
+  /* Wählt die Hauptüberschrift innerhalb der Namenszeile aus. */
+  margin: 0; /* Entfernt die standardmäßigen Außenabstände der Überschrift. */
+  font-family:
+    "Palanquin Dark", sans-serif; /* Verwendet die gewünschte Figma-Schrift mit einer Ersatzschrift. */
+  font-size: 48px; /* Legt die Schriftgröße des Restaurantnamens fest. */
+  font-weight: 700; /* Stellt den Restaurantnamen fett dar. */
+} /* Beendet die Gestaltung der Hauptüberschrift. */
+
+.restaurant-name-row h1 span {
+  color: var(--orange); /* Färbt ausschließlich den Wortteil Burger orange. */
+}
+
+.rating {
+  /* Gestaltet die gemeinsame Bewertungsgruppe. */
+  gap: 8px; /* Schafft Abstand zwischen Stern, Bewertung und Bewertungsanzahl. */
+  font-size: 20px; /* Legt die Schriftgröße der Bewertung fest. */
+  white-space: nowrap; /* Verhindert gewöhnliche Textumbrüche innerhalb der Bewertung. */
+  background-color: #facaac; /* Erzeugt den hellorangenen Bewertungshintergrund. */
+  padding: 4px 5px; /* Erzeugt einen Innenabstand zum Rand. */
+  border-radius: 4px; /* Rundet die Ecken des Hintergrundes leicht ab. */
+} /* Beendet die Gestaltung der Bewertungsgruppe. */
+
+.restaurant-details p {
+  /* Wählt alle Textabsätze innerhalb der Restaurantinformationen aus. */
+  margin: 8px 0 0; /* Erzeugt ausschließlich oberhalb des Absatzes 8 Pixel Außenabstand. */
+  font-size: 24px; /* Legt die allgemeine Schriftgröße der Absätze fest. */
+  font-weight: 700; /* Stellt die Absätze zunächst fett dar. */
+  line-height: 1.25; /* Setzt die Zeilenhöhe auf das 1,25-Fache der Schriftgröße. */
+} /* Beendet die allgemeine Absatzgestaltung. */
+
+.restaurant-details .delivery-info {
+  /* Wählt gezielt den Lieferhinweis innerhalb der Restaurantinformationen aus. */
+  font-size: 18px; /* Verkleinert den Lieferhinweis gegenüber der Restaurantbeschreibung. */
+  font-weight: 400; /* Stellt den Lieferhinweis in normaler Schriftstärke dar. */
+} /* Beendet die individuelle Gestaltung des Lieferhinweises. */
