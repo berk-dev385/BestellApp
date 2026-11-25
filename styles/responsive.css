@@ -1,0 +1,32 @@
+@media (max-width: 991px) {
+  /* Aktiviert die folgenden CSS-Regeln bis einschließlich 991 Pixel Browserbreite. */
+
+  .site-header {
+    /* Passt die bestehende Kopfzeile für kleinere Bildschirme an. */
+    height: 79px; /* Reduziert die Höhe des Headers von 128 auf 79 Pixel. */
+    padding: 0 16px; /* Setzt links und rechts jeweils 16 Pixel Innenabstand. */
+  } /* Beendet die mobile Headergestaltung. */
+
+  .desktop-menu-icon {
+    /* Wählt das Menüsymbol der Desktopansicht aus. */
+    display: none; /* Nix diese Bitte machen zeigen in de handy. */
+  } /* Beendet die Regel für das Menüsymbol. */
+
+  .hero-image-wrap {
+    /* Passt den gemeinsamen Container der Restaurantbilder an. */
+    margin: 25px 16px 86px; /* Setzt oben 25, seitlich 16 und unten 86 Pixel Außenabstand. */
+  } /* Beendet die mobile Gestaltung des Bildcontainers. */
+
+  .restaurant-hero {
+    /* Gestaltet das Restaurantfoto auf kleineren Bildschirmen. */
+    height: 346px; /* Reduziert die Höhe des Restaurantfotos auf 346 Pixel. */
+    border-radius: 18px; /* Rundet alle vier Ecken des Fotos ab. */
+  } /* Beendet die mobile Fotogestaltung. */
+
+  .restaurant-logo {
+    /* Passt das überlappende BurgerHouse-Logo an. */
+    width: 120px; /* Reduziert die Gesamtbreite des Logos auf 120 Pixel. */
+    height: 120px; /* Reduziert die Gesamthöhe des Logos auf 120 Pixel. */
+    bottom: -60px; /* Positioniert die untere Hälfte des Logos außerhalb des Bildcontainers. */
+  } /* Beendet die mobile Logogestaltung. */
+} /* Beendet die Media Query und alle darin enthaltenen mobilen CSS-Regeln. */
