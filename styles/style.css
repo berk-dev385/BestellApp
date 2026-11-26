@@ -132,3 +132,74 @@ a:focus-visible {
   font-size: 18px; /* Verkleinert den Lieferhinweis gegenüber der Restaurantbeschreibung. */
   font-weight: 400; /* Stellt den Lieferhinweis in normaler Schriftstärke dar. */
 } /* Beendet die individuelle Gestaltung des Lieferhinweises. */
+
+.menu-board {
+  /* Gestaltet den gesamten Hauptbereich der Speisekarte. */
+  display: grid; /* Aktiviert das CSS-Grid-Layout. */
+  grid-template-columns: minmax(
+    0,
+    1fr
+  ); /* Erstellt zunächst eine flexible Spalte. */
+  gap: 32px; /* Reserviert Abstand zwischen zukünftigen Grid-Elementen. */
+  padding: 0 clamp(16px, 5vw, 72px) 48px; /* Erzeugt flexible seitliche Innenabstände. */
+}
+
+.menu-column {
+  /* Gestaltet den gemeinsamen Container aller Kategorien. */
+  min-width: 0; /* Erlaubt der Menüspalte, bei Platzmangel zu schrumpfen. */
+}
+
+.food-section {
+  /* Gestaltet jede einzelne Gerichtskategorie. */
+  margin-bottom: 40px; /* Erzeugt Abstand zur nachfolgenden Kategorie. */
+}
+
+.category-heading {
+  /* Gestaltet den gemeinsamen Container von Kategoriebild und Überschrift. */
+  display: flex; /* Ordnet Bild und Überschrift nebeneinander an. */
+  align-items: center; /* Zentriert beide Elemente vertikal. */
+  gap: 24px; /* Erzeugt Abstand zwischen Bild und Überschrift. */
+  background: var(--orange); /* Verwendet unseren zentralen Orangeton. */
+  padding: 8px 24px; /* Erzeugt oben und unten 8px sowie seitlich 24px Innenabstand. */
+  color: white; /* Färbt den Text weiß. */
+}
+
+.category-heading img {
+  /* Gestaltet alle drei Kategoriemotive. */
+  width: 88px; /* Definiert die Breite der Bildfläche. */
+  height: 91px; /* Definiert die Höhe der Bildfläche. */
+  object-fit: contain; /* Erhält die Bildproportionen ohne Abschneiden. */
+}
+
+.category-heading h2 {
+  /* Gestaltet die Überschriften der Kategorien. */
+  margin: 0; /* Entfernt die standardmäßigen Außenabstände. */
+  font-size: 40px; /* Legt die Schriftgröße fest. */
+  font-weight: 700; /* Stellt die Überschrift fett dar. */
+}
+
+.mobile-category-title {
+  /* Wählt die alternative mobile Burgerüberschrift aus. */
+  display: none; /* Blendet die mobile Titelvariante zunächst aus. */
+}
+
+.dish-list {
+  /* Bereitet die Container für die späteren Gerichtskarten vor. */
+  display: flex; /* Aktiviert das Flexbox-Layout. */
+  flex-direction: column; /* Ordnet zukünftige Gerichtskarten untereinander an. */
+  gap: 16px; /* Erzeugt Abstand zwischen zukünftigen Gerichtskarten. */
+  margin-top: 24px; /* Schafft Abstand zur Kategorieüberschrift. */
+}
+
+/* FOOTER */
+
+.site-footer {
+  /* Gestaltet die Fußzeile der Anwendung. */
+  min-height: 128px; /* Definiert die Mindesthöhe des Footers. */
+  background: var(--orange); /* Verwendet unseren zentralen Orangeton. */
+  color: white; /* Färbt die Footertexte weiß. */
+  gap: 48px; /* Erzeugt Abstand zwischen den Textelementen. */
+  flex-wrap: wrap; /* Erlaubt einen Zeilenumbruch bei Platzmangel. */
+  padding: 16px; /* Erzeugt rundherum Innenabstand. */
+  font-size: 18px; /* Legt die Schriftgröße der Footertexte fest. */
+}

@@ -45,4 +45,44 @@
     /* Passt die Absätze der Restaurantinformationen an. */
     font-size: 22px; /* Reduziert die allgemeine Absatzgröße von 24 auf 22 Pixel. */
   }
+
+  /* MOBILE KATEGORIEN */
+
+  .menu-board {
+    padding: 0 0 32px; /* Entfernt seitliche Innenabstände und lässt unten 32px Platz. */
+  }
+
+  .category-heading {
+    flex-direction: column; /* Ordnet Kategoriebild und Überschrift untereinander an. */
+    gap: 0; /* Entfernt den zusätzlichen Abstand zwischen Bild und Titel. */
+    padding: 8px; /* Erzeugt rundherum 8px Innenabstand. */
+  }
+
+  .category-heading img {
+    width: 60px; /* Verkleinert die Breite der Bildfläche. */
+    height: 60px; /* Verkleinert die Höhe der Bildfläche. */
+  }
+
+  .category-heading h2 {
+    font-size: 32px; /* Verkleinert die Kategorieüberschriften von 40px auf 32px. */
+  }
+
+  .desktop-category-title {
+    display: none; /* Blendet die lange Desktop-Überschrift aus. */
+  }
+
+  .mobile-category-title {
+    display: inline; /* Blendet die kurze mobile Überschrift wieder ein. */
+  }
+
+  .dish-list {
+    margin: 24px 20px 0; /* Definiert die Außenabstände der späteren Gerichtelisten. */
+  }
+
+  /* MOBILER FOOTER */
+
+  .site-footer {
+    flex-direction: column; /* Ordnet die Footertexte untereinander an. */
+    gap: 0; /* Entfernt den bisherigen Abstand zwischen den Textelementen. */
+  }
 } /* Beendet die Media Query und alle darin enthaltenen mobilen CSS-Regeln. */
