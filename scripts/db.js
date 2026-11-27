@@ -114,3 +114,5 @@ const dishes = [ // Array für sämtliche Gerichte der Speisekarte.
     },
 
 ]; // ]; // Beendet das vollständige Array mit allen 12 Gerichten in den 3 Kategorien. 
+
+const deliveryFeeCents = 499; // Speichert die feste Liefergebühr als ganzzahligen Centbetrag.

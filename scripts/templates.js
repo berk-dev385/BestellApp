@@ -37,7 +37,7 @@ function createEmptyBasket() { // Erzeugt die HTML-Vorlage für einen leeren War
   </div>`; // Schließt das Template Literal und gibt den vollständigen HTML-String zurück.
 } // Ende der Funktion; keine direkte Veränderung des DOM.
 
-function createBasketItem(dish, quantity) { // Parameter: Gerichtsobjekt aus db.js und Bestellmenge aus basket.
+function createBasketItem(dish, quantity, itemPrice) { // Empfängt Gerichtsobjekt, Bestellmenge und berechneten Positionspreis in Cent.
   return `<div class="basket-item"> <!-- Beginnt eine einzelne Warenkorbposition. -->
     <div class="basket-item-heading"> <!-- Gruppiert Gerichtsname und Löschbutton. -->
       <p>${quantity} x ${dish.name}</p> <!-- Zeigt Bestellmenge und Gerichtsname. -->
@@ -47,10 +47,20 @@ function createBasketItem(dish, quantity) { // Parameter: Gerichtsobjekt aus db.
       <button type="button" onclick="changeQuantity(${dish.id}, -1)" aria-label="Decrease ${dish.name}">−</button> <!-- Reduziert die Bestellmenge um 1. -->
       <span>${quantity}</span> <!-- Zeigt die aktuelle Bestellmenge. -->
       <button type="button" onclick="changeQuantity(${dish.id}, 1)" aria-label="Increase ${dish.name}">+</button> <!-- Erhöht die Bestellmenge um 1. -->
+      <strong class="basket-item-price">${formatPrice(itemPrice)}</strong> <!-- Formatiert den Positionspreis in Euro und zeigt ihn an. -->
     </div> <!-- Ende der Mengensteuerung. -->
   </div>`; // Gibt die vollständige Warenkorbposition als HTML-String zurück.
 } // Ende der Positionsvorlage.
 
-function createFilledBasket(items) { // Empfängt die bereits erzeugten Warenkorbpositionen als HTML-String.
-  return `<div class="basket-content"><h2 class="basket-title">Your Basket</h2><div class="basket-items">${items}</div></div>`; // Bettet alle Positionen in den gemeinsamen Warenkorb-Container ein.
+function createBasketSummary(subtotal, total) { // Empfängt berechnete Zwischen- und Gesamtsumme in Cent.
+  return `<div class="basket-totals"> <!-- Gruppiert alle Preisangaben. -->
+    <div class="basket-total-line"><span>Subtotal</span><span>${formatPrice(subtotal)}</span></div> <!-- Zeigt die formatierte Zwischensumme. -->
+    <div class="basket-total-line"><span>Delivery fee</span><span>${formatPrice(deliveryFeeCents)}</span></div> <!-- Zeigt die Liefergebühr aus db.js. -->
+    <div class="basket-grand-total"><span>Total</span><span>${formatPrice(total)}</span></div> <!-- Zeigt die formatierte Gesamtsumme. -->
+    <button type="button" class="basket-buy">Buy now (${formatPrice(total)})</button> <!-- Erstellt den Bestellbutton mit Gesamtpreis. -->
+  </div>`; // Gibt die vollständige Summenvorlage als HTML-String zurück.
+} // Ende der Summenvorlage.
+
+function createFilledBasket(items, subtotal, total) { // Empfängt HTML-Positionen, Zwischensumme und Gesamtsumme.
+  return `<div class="basket-content"><h2 class="basket-title">Your Basket</h2><div class="basket-items">${items}</div>${createBasketSummary(subtotal, total)}</div>`; // Verbindet Warenkorbpositionen und Summenvorlage.
 } // Ende der gefüllten Warenkorbvorlage.
