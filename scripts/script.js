@@ -1,3 +1,5 @@
+let basket = []; // Speichert nur ausgewählte Gerichte und deren Mengen.
+
 // PREISFORMATIERUNG
 function formatPrice(cents) { // Empfängt einen ganzzahligen Centbetrag als Parameter.
     return (cents / 100).toFixed(2).replace('.', ',') + '€'; // Rechnet Cent in Euro um, formatiert den Betrag und gibt ihn als Text zurück.
@@ -19,4 +21,9 @@ function renderMenu() { // Koordiniert die Ausgabe aller drei Gerichtskategorien
     renderCategory('salad', 'saladList'); // Argumente: Kategorie salad; HTML-Ziel saladList.
 } // Ende der Funktion; alle drei Kategorien werden nacheinander verarbeitet, sobald sie aufgerufen wird.
 
+function renderBasket() { // Steuert die Ausgabe des leeren Desktop-Warenkorbs.
+    document.getElementById('desktopBasket').innerHTML = createEmptyBasket(); // Sucht den HTML-Zielcontainer und ersetzt dessen Inhalt durch den HTML-Rückgabewert aus templates.js.
+} // Ende der Warenkorb-Renderingfunktion.
+
 renderMenu(); // Startaufruf: Führt beim Laden von script.js das Rendering aller drei Kategorien aus.
+renderBasket(); // Zeigt den anfänglich leeren Korb an.

@@ -279,3 +279,13 @@ a:focus-visible {
   /* Wählt den alternativen mobilen Gerichtsnamen aus. */
   display: none; /* Blendet den alternativen Namen zunächst aus. */
 } /* Ende der Titelsichtbarkeit. */
+
+/* DESKTOP-LAYOUT MIT WARENKORB */
+
+@media (min-width: 992px) {
+  /* Aktiviert die folgenden Regeln ab 992px Bildschirmbreite. */
+  .menu-board {
+    /* Übergeordneter Grid-Container für Speisekarte und Warenkorb. */
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 33%); /* Linke Spalte: flexibler Restplatz; rechte Spalte: 33% Breite, mindestens 300px. */
+  } /* Ende der Grid-Regel. */
+} /* Ende der Desktop-Media-Query. */

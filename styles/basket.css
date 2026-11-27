@@ -1,0 +1,63 @@
+/* WARENKORB-CONTAINER */
+
+.basket-panel {
+  /* Äußerer Warenkorb-Container. */
+  position: sticky; /* Lässt den Warenkorb beim Scrollen innerhalb seines Elternbereichs haften. */
+  top: 20px; /* Mindestabstand zum oberen Bildschirmrand beim Haften. */
+  height: min(
+    794px,
+    calc(100vh - 40px)
+  ); /* Begrenzt die Höhe auf 794px oder Bildschirmhöhe minus 40px. */
+  background: var(--dark); /* Übernimmt die zentrale dunkle Hintergrundfarbe. */
+  color: var(--cream); /* Übernimmt die zentrale helle Textfarbe. */
+  padding: clamp(
+    16px,
+    3vw,
+    31px
+  ); /* Flexibler Innenabstand zwischen 16px und 31px. */
+} /* Ende des äußeren Warenkorbs. */
+
+/* WARENKORB-INHALT */
+
+.basket-content {
+  /* Innerer Container für sämtliche Warenkorbinhalte. */
+  height: 100%; /* Nutzt die gesamte verfügbare Innenhöhe. */
+  min-height: 0; /* Erlaubt dem Container, bei Platzmangel zu schrumpfen. */
+  display: flex; /* Aktiviert Flexbox für die Warenkorbinhalte. */
+  flex-direction: column; /* Ordnet die Inhalte untereinander an. */
+} /* Ende des Inhaltscontainers. */
+
+/* WARENKORB-ÜBERSCHRIFT */
+
+.basket-title {
+  /* Überschrift des Warenkorbs. */
+  text-align: center; /* Zentriert den Überschriftentext horizontal. */
+  font-size: 32px; /* Legt die Schriftgröße fest. */
+  font-weight: 700; /* Stellt die Überschrift fett dar. */
+  margin: 0 0 24px; /* Entfernt Außenabstände bis auf 24px nach unten. */
+} /* Ende der Überschriftengestaltung. */
+
+/* LEERER WARENKORB */
+
+.basket-empty {
+  /* Container für den leeren Warenkorbzustand. */
+  display: flex; /* Aktiviert Flexbox für Symbol und Hinweistext. */
+  flex: 1; /* Nutzt den verbleibenden Platz unterhalb der Überschrift. */
+  flex-direction: column; /* Ordnet Symbol und Hinweistext untereinander an. */
+  align-items: center; /* Zentriert beide Elemente horizontal. */
+  justify-content: center; /* Zentriert beide Elemente vertikal. */
+  gap: 24px; /* Abstand zwischen Symbol und Hinweistext. */
+  text-align: center; /* Zentriert die Textzeilen. */
+} /* Ende des Leerzustand-Containers. */
+
+.basket-empty img {
+  /* Wählt das Warenkorbsymbol im Leerzustand aus. */
+  width: 120px; /* Legt die Symbolbreite fest. */
+  height: 120px; /* Legt die Symbolhöhe fest. */
+} /* Ende der Symbolgestaltung. */
+
+.basket-empty p {
+  /* Wählt den Hinweistext im Leerzustand aus. */
+  font-size: 24px; /* Legt die Schriftgröße des Hinweises fest. */
+  margin: 0; /* Entfernt standardmäßige Absatzabstände. */
+} /* Ende der Hinweisgestaltung. */
