@@ -67,16 +67,35 @@ function removeDish(id) { // Empfängt die ID des vollständig zu entfernenden G
     renderBasket(); // Aktualisiert die Warenkorbanzeige.
 } // Ende der Löschfunktion.
 
+function calculateSubtotal() { // Berechnet den Warenwert aller Warenkorbpositionen.
+    let subtotal = 0; // Initialisiert die Zwischensumme mit 0 Cent.
+    for (let i = 0; i < basket.length; i++) { // Durchläuft alle Positionen im basket-Array.
+        const dish = findDish(basket[i].dishId); // Holt das zugehörige Gerichtsobjekt aus db.js.
+        subtotal += dish.priceCents * basket[i].quantity; // Addiert Einzelpreis mal Bestellmenge zur Zwischensumme.
+    } // Ende der Summenschleife.
+    return subtotal; // Gibt die berechnete Zwischensumme in Cent zurück.
+} // Ende der Zwischensummenberechnung.
+
+function calculateItemPrice(dish, quantity) { // Empfängt Gerichtsobjekt und Bestellmenge.
+    return dish.priceCents * quantity; // Gibt den Positionspreis als Centbetrag zurück.
+} // Ende der Positionspreisberechnung.
+
+function calculateTotal(subtotal) { // Empfängt die berechnete Zwischensumme in Cent.
+    return subtotal + deliveryFeeCents; // Addiert die feste Liefergebühr aus db.js.
+} // Ende der Gesamtsummenberechnung.
+
 function renderBasket() { // Entscheidet zwischen leerer und gefüllter Warenkorbansicht.
     let markup = createEmptyBasket(); // Speichert zunächst die HTML-Vorlage des Leerzustands.
     if (basket.length > 0) { // Prüft, ob mindestens eine Warenkorbposition vorhanden ist.
         let items = ''; // Erstellt einen leeren String für alle Warenkorbpositionen.
         for (let i = 0; i < basket.length; i++) { // Durchläuft alle Positionen im basket-Array.
             const dish = findDish(basket[i].dishId); // Holt anhand der Gerichts-ID das zugehörige Objekt aus db.js.
-            items += createBasketItem(dish, basket[i].quantity); // Übergibt Gericht und Menge an die Vorlage und sammelt den HTML-String.
+            items += createBasketItem(dish, basket[i].quantity, calculateItemPrice(dish, basket[i].quantity)); // Berechnet den Positionspreis und übergibt Gericht, Menge und Preis an die HTML-Vorlage.
         } // Ende der Schleife; alle Warenkorbpositionen wurden gesammelt.
-        markup = createFilledBasket(items); // Ersetzt die Leerzustandsvorlage durch die gefüllte Warenkorbvorlage.
+        const subtotal = calculateSubtotal(); // Berechnet den Warenwert einmal aus allen Warenkorbpositionen.
+        markup = createFilledBasket(items, subtotal, calculateTotal(subtotal)); // Berechnet den Gesamtbetrag und übergibt beide Beträge an die HTML-Vorlage.
     } // Ende der Zustandsprüfung.
+
     document.getElementById('desktopBasket').innerHTML = markup; // Ersetzt den bisherigen HTML-Inhalt durch den aktuellen Warenkorbzustand.
 } // Ende der Warenkorb-Renderingfunktion.
 

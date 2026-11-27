@@ -128,3 +128,54 @@
   width: 24px; /* Legt die Symbolbreite fest. */
   height: 24px; /* Legt die Symbolhöhe fest. */
 } /* Ende der Symbolgestaltung. */
+
+/* POSITIONSPREIS */
+
+.basket-item-price {
+  /* Gestaltet den berechneten Preis einer Warenkorbposition. */
+  margin-left: auto; /* Schiebt den Preis an den rechten Rand der Flexbox. */
+  white-space: nowrap; /* Verhindert einen Zeilenumbruch innerhalb des Preises. */
+} /* Ende der Positionspreisgestaltung. */
+
+/* SUMMENBEREICH */
+
+.basket-totals {
+  /* Container für Zwischensumme, Liefergebühr, Gesamtsumme und Bestellbutton. */
+  flex-shrink: 0; /* Verhindert das Schrumpfen des Summenbereichs bei vielen Bestellpositionen. */
+  padding-top: 16px; /* Schafft Abstand zur darüberliegenden Positionsliste. */
+} /* Ende des Summencontainers. */
+
+.basket-total-line,
+.basket-grand-total {
+  /* Gemeinsame Gestaltung aller Summenzeilen. */
+  display: flex; /* Ordnet Bezeichnung und Geldbetrag nebeneinander an. */
+  justify-content: space-between; /* Platziert die Bezeichnung links und den Geldbetrag rechts. */
+  gap: 8px; /* Sichert einen Mindestabstand zwischen beiden Elementen. */
+  font-size: 20px; /* Legt die Schriftgröße der Summenzeilen fest. */
+} /* Ende der gemeinsamen Summengestaltung. */
+
+/* GESAMTSUMME */
+
+.basket-grand-total {
+  /* Hebt die Gesamtsumme gegenüber den übrigen Beträgen hervor. */
+  border-top: 1px solid var(--cream); /* Erzeugt eine helle Trennlinie oberhalb der Gesamtsumme. */
+  margin-top: 12px; /* Schafft Außenabstand zur Liefergebühr. */
+  padding: 12px 0; /* Schafft oben und unten jeweils 12px Innenabstand. */
+  font-weight: 700; /* Stellt die Gesamtsumme fett dar. */
+} /* Ende der Gesamtsummengestaltung. */
+
+/* BESTELLBUTTON */
+
+.basket-buy {
+  /* Gestaltet den Button zum späteren Bestellabschluss. */
+  width: 100%; /* Nutzt die gesamte verfügbare Innenbreite des Warenkorbs. */
+  min-height: 56px; /* Reserviert eine Mindesthöhe von 56px. */
+  border: 0; /* Entfernt den standardmäßigen Buttonrahmen. */
+  border-radius: 40px; /* Rundet die Ecken des Buttons ab. */
+  background: var(
+    --orange
+  ); /* Übernimmt die zentrale orangefarbene Designvariable. */
+  color: white; /* Stellt den Buttontext weiß dar. */
+  font-weight: 700; /* Stellt den Buttontext fett dar. */
+  font-size: 24px; /* Legt die Schriftgröße des Buttontextes fest. */
+} /* Ende der Bestellbuttongestaltung. */
