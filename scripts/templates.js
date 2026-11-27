@@ -16,7 +16,7 @@ function createDishCard(dish) { // Empfängt ein einzelnes Gerichtsobjekt und er
     </div> <!-- Schließt den Textcontainer. -->
     <div class="dish-actions"> <!-- Gruppiert Preis und Button unabhängig vom Textcontainer. -->
       <strong>${formatPrice(dish.priceCents)}</strong> <!-- Übergibt die gespeicherten Cent an die Formatierungsfunktion in script.js; zeigt ihren Rückgabewert an. -->
-      <button class="add-to-basket" type="button">Add to basket</button> <!-- Erstellt den Button; onclick folgt erst in 08.03. -->
+      <button class="add-to-basket" type="button" onclick="addDish(${dish.id})">Add to basket</button> <!-- Übergibt beim Klick die numerische Gericht-ID. -->
     </div> <!-- Schließt die Aktionsgruppe. -->
   </article>`; // Schließt HTML und Template Literal; gibt die gesamte Zeichenkette zurück.
 } // Beendet die Kartenvorlage.
@@ -36,3 +36,21 @@ function createEmptyBasket() { // Erzeugt die HTML-Vorlage für einen leeren War
     </div> <!-- Ende des Leerzustand-Containers. -->
   </div>`; // Schließt das Template Literal und gibt den vollständigen HTML-String zurück.
 } // Ende der Funktion; keine direkte Veränderung des DOM.
+
+function createBasketItem(dish, quantity) { // Parameter: Gerichtsobjekt aus db.js und Bestellmenge aus basket.
+  return `<div class="basket-item"> <!-- Beginnt eine einzelne Warenkorbposition. -->
+    <div class="basket-item-heading"> <!-- Gruppiert Gerichtsname und Löschbutton. -->
+      <p>${quantity} x ${dish.name}</p> <!-- Zeigt Bestellmenge und Gerichtsname. -->
+      <button type="button" class="basket-delete" onclick="removeDish(${dish.id})" aria-label="Remove ${dish.name}"><img src="assets/icons/delete.svg" alt=""></button> <!-- Löscht die gesamte Position anhand der Gerichts-ID. -->
+    </div> <!-- Ende der Kopfzeile. -->
+    <div class="basket-item-bottom"> <!-- Gruppiert die Mengensteuerung. -->
+      <button type="button" onclick="changeQuantity(${dish.id}, -1)" aria-label="Decrease ${dish.name}">−</button> <!-- Reduziert die Bestellmenge um 1. -->
+      <span>${quantity}</span> <!-- Zeigt die aktuelle Bestellmenge. -->
+      <button type="button" onclick="changeQuantity(${dish.id}, 1)" aria-label="Increase ${dish.name}">+</button> <!-- Erhöht die Bestellmenge um 1. -->
+    </div> <!-- Ende der Mengensteuerung. -->
+  </div>`; // Gibt die vollständige Warenkorbposition als HTML-String zurück.
+} // Ende der Positionsvorlage.
+
+function createFilledBasket(items) { // Empfängt die bereits erzeugten Warenkorbpositionen als HTML-String.
+  return `<div class="basket-content"><h2 class="basket-title">Your Basket</h2><div class="basket-items">${items}</div></div>`; // Bettet alle Positionen in den gemeinsamen Warenkorb-Container ein.
+} // Ende der gefüllten Warenkorbvorlage.

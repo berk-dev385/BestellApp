@@ -141,7 +141,7 @@ a:focus-visible {
     1fr
   ); /* Erstellt zunächst eine flexible Spalte. */
   gap: 32px; /* Reserviert Abstand zwischen zukünftigen Grid-Elementen. */
-  padding: 0 clamp(16px, 5vw, 72px) 48px; /* Erzeugt flexible seitliche Innenabstände. */
+  padding: 0 0 48px; /* Entfernt seitliche Innenabstände und behält unten 48px Abstand bei. */
 }
 
 .menu-column {
