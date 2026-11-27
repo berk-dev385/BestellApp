@@ -95,7 +95,6 @@ function renderBasket() { // Entscheidet zwischen leerer und gefüllter Warenkor
         const subtotal = calculateSubtotal(); // Berechnet den Warenwert einmal aus allen Warenkorbpositionen.
         markup = createFilledBasket(items, subtotal, calculateTotal(subtotal)); // Berechnet den Gesamtbetrag und übergibt beide Beträge an die HTML-Vorlage.
     } // Ende der Zustandsprüfung.
-
     document.getElementById('desktopBasket').innerHTML = markup; // Ersetzt den bisherigen HTML-Inhalt durch den aktuellen Warenkorbzustand.
 } // Ende der Warenkorb-Renderingfunktion.
 
