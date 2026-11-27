@@ -85,4 +85,41 @@
     flex-direction: column; /* Ordnet die Footertexte untereinander an. */
     gap: 0; /* Entfernt den bisherigen Abstand zwischen den Textelementen. */
   }
+  /* GERICHTSKARTEN MOBILE */
+
+  .dish-card {
+    /* Hauptcontainer der Gerichtskarte. */
+    flex-direction: column; /* Ordnet Bild, Text und Aktionen untereinander an. */
+    gap: 8px; /* Abstand zwischen den drei Bereichen. */
+  } /* Ende des Kartencontainers. */
+
+  .dish-image {
+    /* Gerichtsfoto innerhalb der Karte. */
+    width: 100%; /* Nutzt die gesamte Karteninnenbreite. */
+    height: 86px; /* Legt die mobile Bildhöhe fest. */
+  } /* Ende der Bildgestaltung. */
+
+  .dish-copy {
+    /* Container für Name und Zutaten. */
+    width: 100%; /* Nutzt die gesamte Karteninnenbreite. */
+  } /* Ende des Textcontainers. */
+
+  .dish-actions {
+    /* Container für Preis und Button. */
+    width: 100%; /* Nutzt die gesamte Karteninnenbreite. */
+    min-height: 0; /* Hebt die Desktop-Mindesthöhe auf. */
+    flex-direction: row; /* Ordnet Preis und Button nebeneinander an. */
+    align-items: center; /* Zentriert Preis und Button vertikal. */
+    flex-wrap: wrap; /* Erlaubt einen Umbruch bei Platzmangel. */
+  } /* Ende des Aktionscontainers. */
+
+  .desktop-dish-name {
+    /* Desktop-Variante des Gerichtstitels. */
+    display: none; /* Blendet den Desktop-Titel mobil aus. */
+  } /* Ende der Desktop-Titelregel. */
+
+  .mobile-dish-name {
+    /* Mobile Variante des Gerichtstitels. */
+    display: inline; /* Blendet den mobilen Titel ein. */
+  } /* Ende der mobilen Titelregel. */
 } /* Beendet die Media Query und alle darin enthaltenen mobilen CSS-Regeln. */

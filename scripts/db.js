@@ -36,8 +36,6 @@ const dishes = [ // Array für sämtliche Gerichte der Speisekarte.
         image: "assets/images/big-chicken-burger.png" // Bildpfad.
     },
 
-
-
     // PIZZA-DATENSÄTZE
 
     { // Beginnt Datensatz 5.

@@ -203,3 +203,79 @@ a:focus-visible {
   padding: 16px; /* Erzeugt rundherum Innenabstand. */
   font-size: 18px; /* Legt die Schriftgröße der Footertexte fest. */
 }
+
+/* GERICHTSKARTEN */
+
+.dish-card {
+  /* Hauptcontainer einer Gerichtskarte. */
+  display: flex; /* Ordnet Bild, Text und Aktionen nebeneinander an. */
+  align-items: flex-start; /* Richtet alle drei Bereiche am oberen Rand aus. */
+  gap: 15px; /* Abstand zwischen den direkten Flex-Kindern. */
+  padding: 10px; /* Innenabstand zwischen Kartenrand und Inhalt. */
+  min-height: 141px; /* Mindesthöhe; erlaubt Wachstum bei längeren Texten. */
+  background: var(--cream); /* Verwendet die zentrale Cremefarbe aus :root. */
+  border-radius: 12px; /* Rundet die Kartenecken ab. */
+} /* Ende des Hauptcontainers. */
+
+.dish-image {
+  /* Gerichtsfoto innerhalb der Karte. */
+  width: 29%; /* Bildbreite relativ zur verfügbaren Breite der Karte. */
+  height: 121px; /*Einheitliche Höhe aller Gerichtsfotos. */
+  object-fit: cover; /*Füllt die Bildfläche proportional; schneidet ÜberstÄnde ab. */
+  border-radius: 12px; /*Rundet die Bildecken ab. */
+  flex-shrink: 0; /* Verhindert das Zusammenschrumpfen des Bildes. */
+} /*Ende der Bildgestaltung. */
+
+.dish-copy {
+  /* Mittlerer Container für Name und Zutaten. */
+  flex: 1; /* Nutzt den verbleibenden Platz zwischen Bild und Aktionen. */
+  min-width: 0; /* Erlaubt dem Textcontainer, unter seine Inhaltsbreite zu schrumpfen. */
+  overflow-wrap: anywhere; /* Erlaubt bei Platzmangel auch Umbrüche innerhalb langer Wörter. */
+} /* Ende des Textcontainers. */
+
+.dish-copy h3 {
+  /* Wählt die Gerichtsüberschrift im Textcontainer aus. */
+  margin: 0 0 7px; /* Entfernt Außenabstände; behält 7px Abstand nach unten. */
+  font-size: 24px; /* Schriftgröße des Gerichtsnamens. */
+  font-weight: 600; /* Halbfette Schrift zur Hervorhebung. */
+  line-height: 1.2; /* Zeilenhöhe relativ zur Schriftgröße. */
+} /* Ende der Titelgestaltung. */
+
+.dish-copy p {
+  /* Wählt die Zutatenbeschreibung im Textcontainer aus. */
+  margin: 0; /* Entfernt standardmäßige Absatzabstände. */
+  font-size: 16px; /* Schriftgröße der Zutatenbeschreibung. */
+  line-height: 1.2; /* Kompakter Abstand zwischen Textzeilen. */
+} /* Ende der Beschreibungsgestaltung. */
+
+.dish-actions {
+  /* Rechter Container für Preis und Button. */
+  display: flex; /* Aktiviert Flexbox für Preis und Button. */
+  flex-direction: column; /* Ordnet Preis und Button untereinander an. */
+  align-items: flex-end; /* Richtet beide Elemente am rechten Rand aus. */
+  justify-content: space-between; /* Verteilt Preis oben und Button unten. */
+  gap: 12px; /* Mindestabstand zwischen Preis und Button. */
+  min-height: 107px; /* Mindesthöhe für die vertikale Verteilung. */
+  flex-shrink: 0; /* Verhindert das Zusammenschrumpfen des Aktionsbereichs. */
+} /* Ende des Aktionscontainers. */
+
+.dish-actions strong {
+  /* Wählt die Preisangabe aus. */
+  font-size: 24px; /* Vergrößert die Preisangabe. */
+  white-space: nowrap; /* Verhindert einen Zeilenumbruch innerhalb des Preises. */
+} /* Ende der Preisgestaltung. */
+
+.add-to-basket {
+  /* Gestaltet den Button zum Hinzufügen. */
+  border: 0; /* Entfernt den standardmäßigen Buttonrahmen. */
+  border-radius: 20px; /* Erzeugt die abgerundete Buttonform. */
+  padding: 4px 10px; /* Innenabstand: vertikal 4px, horizontal 10px. */
+  background: white; /* Setzt einen weißen Buttonhintergrund. */
+  color: var(--dark); /* Verwendet die zentrale dunkle Textfarbe. */
+  font-weight: 600; /* Hebt die Buttonbeschriftung halbfett hervor. */
+} /* Ende der Buttongestaltung. */
+
+.mobile-dish-name {
+  /* Wählt den alternativen mobilen Gerichtsnamen aus. */
+  display: none; /* Blendet den alternativen Namen zunächst aus. */
+} /* Ende der Titelsichtbarkeit. */
