@@ -61,3 +61,70 @@
   font-size: 24px; /* Legt die Schriftgröße des Hinweises fest. */
   margin: 0; /* Entfernt standardmäßige Absatzabstände. */
 } /* Ende der Hinweisgestaltung. */
+
+/* WARENKORB-POSITIONSLISTE */
+
+.basket-items {
+  /* Container für sämtliche Warenkorbpositionen. */
+  flex: 1; /* Nutzt den verbleibenden Platz im Warenkorb. */
+  min-height: 0; /* Erlaubt der Liste, bei Platzmangel zu schrumpfen. */
+  overflow-y: auto; /* Aktiviert vertikales Scrollen bei zu vielen Positionen. */
+} /* Ende der Positionsliste. */
+
+/* EINZELNE WARENKORBPOSITION */
+
+.basket-item {
+  /* Container einer einzelnen Bestellposition. */
+  padding: 15px 0; /* Schafft oben und unten jeweils 15px Innenabstand. */
+  border-bottom: 1px solid #5c5957; /* Trennt die Bestellpositionen optisch. */
+} /* Ende der Positionsgestaltung. */
+
+.basket-item-heading,
+.basket-item-bottom {
+  /* Gemeinsame Regeln für Kopfzeile und Mengensteuerung. */
+  display: flex; /* Ordnet die enthaltenen Elemente nebeneinander an. */
+  align-items: center; /* Zentriert die Elemente vertikal. */
+  gap: 8px; /* Schafft Abstand zwischen den Elementen. */
+} /* Ende der gemeinsamen Regeln. */
+
+.basket-item-heading p {
+  /* Absatz mit Bestellmenge und Gerichtsname. */
+  flex: 1; /* Nutzt den verfügbaren Platz neben dem Löschbutton. */
+  min-width: 0; /* Erlaubt dem Textbereich, bei Platzmangel zu schrumpfen. */
+  overflow-wrap: anywhere; /* Erlaubt den Umbruch langer Gerichtsnamen. */
+  font-size: 22px; /* Legt die Schriftgröße fest. */
+  font-weight: 700; /* Stellt den Text fett dar. */
+  margin: 0; /* Entfernt standardmäßige Absatzabstände. */
+} /* Ende der Textgestaltung. */
+
+.basket-item-bottom {
+  /* Untere Zeile mit Plus, Minus und Bestellmenge. */
+  margin-top: 12px; /* Schafft Abstand zur Kopfzeile. */
+} /* Ende der Mengensteuerung. */
+
+/* WARENKORB-BUTTONS */
+
+.basket-item button {
+  /* Gemeinsame Gestaltung aller Positionsbuttons. */
+  background: transparent; /* Verwendet keinen eigenen Hintergrund. */
+  color: var(--cream); /* Übernimmt die zentrale helle Textfarbe. */
+  border: 1px solid var(--cream); /* Erzeugt eine helle Kontur. */
+  border-radius: 50%; /* Macht die quadratischen Buttons kreisförmig. */
+  width: 32px; /* Legt die Buttonbreite fest. */
+  height: 32px; /* Legt die Buttonhöhe fest. */
+  flex-shrink: 0; /* Verhindert das Zusammendrücken der Buttons. */
+} /* Ende der allgemeinen Buttongestaltung. */
+
+/* LÖSCHBUTTON */
+
+.basket-item .basket-delete {
+  /* Abweichende Gestaltung des Löschbuttons. */
+  border: 0; /* Entfernt die kreisförmige Kontur. */
+  padding: 0; /* Entfernt den Innenabstand. */
+} /* Ende der Löschbuttongestaltung. */
+
+.basket-delete img {
+  /* Bildsymbol innerhalb des Löschbuttons. */
+  width: 24px; /* Legt die Symbolbreite fest. */
+  height: 24px; /* Legt die Symbolhöhe fest. */
+} /* Ende der Symbolgestaltung. */
