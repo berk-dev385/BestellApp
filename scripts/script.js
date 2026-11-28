@@ -132,5 +132,34 @@ function renderMobileBasket(markup) { // Empfängt die erzeugte Warenkorbvorlage
     badge.parentElement.setAttribute('aria-label', 'Your Basket, ' + quantity + ' items'); // Ergänzt die Mengeninformation für Screenreader.
 } // Ende der mobilen Renderingfunktion.
 
+function showConfirmation() { // Zeigt die Bestellbestätigung.
+    const element = document.getElementById('confirmationModal'); // Sucht den Bestätigungsdialog.
+    bootstrap.Modal.getOrCreateInstance(element).show(); // Öffnet die Bestätigung.
+} // Ende der Anzeigefunktion.
+
+function closeConfirmation() { // Reagiert auf den Schließen-Button.
+    const element = document.getElementById('confirmationModal'); // Sucht den Bestätigungsdialog.
+    bootstrap.Modal.getOrCreateInstance(element).hide(); // Schließt die Bestätigung.
+} // Ende der Schließfunktion.
+
+function restoreConfirmationFocus() { // Gibt den Fokus nach dem Schließen zurück.
+    if (window.innerWidth < 992) { // Prüft, ob die mobile Navigation sichtbar ist.
+        restoreBasketFocus(); // Nutzt die bestehende mobile Fokussteuerung.
+    } else { // Desktopansicht ohne sichtbaren mobilen Warenkorbbutton.
+        document.querySelector('.add-to-basket').focus(); // Fokussiert den ersten weiterhin vorhandenen Gerichtsknopf.
+    } // Ende der Ansichtsprüfung.
+} // Ende der Fokusrückgabe.
+
+function finishOrder() { // Verarbeitet eine lokale Testbestellung.
+    if (basket.length === 0) return; // Verhindert die Bestellung eines leeren Warenkorbs.
+    closeBasket(); // Schließt einen eventuell geöffneten mobilen Warenkorb ohne Fade.
+    basket = []; // Entfernt sämtliche Bestellpositionen.
+    renderBasket(); // Aktualisiert beide Ansichten und setzt den Mengenzähler zurück.
+    showConfirmation(); // Öffnet anschließend den Bestätigungsdialog.
+} // Ende des Bestellablaufs.
+
+document.getElementById('confirmationModal').addEventListener('hide.bs.modal', releaseBasketFocus); // Entfernt den Fokus vor jedem Schließen.
+document.getElementById('confirmationModal').addEventListener('hidden.bs.modal', restoreConfirmationFocus); // Gibt den Fokus nach jedem Schließen zurück.
+
 renderMenu(); // Startaufruf: Führt beim Laden von script.js das Rendering aller drei Kategorien aus.
 renderBasket(); // Zeigt den anfänglich leeren Korb an.
