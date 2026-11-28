@@ -84,6 +84,27 @@ function calculateTotal(subtotal) { // Empfängt die berechnete Zwischensumme in
     return subtotal + deliveryFeeCents; // Addiert die feste Liefergebühr aus db.js.
 } // Ende der Gesamtsummenberechnung.
 
+function openBasket() { // Reagiert auf das Warenkorbsymbol.
+    const element = document.getElementById('basketModal'); // Sucht den Dialogcontainer.
+    bootstrap.Modal.getOrCreateInstance(element).show(); // Öffnet den Bootstrap-Dialog.
+} // Beendet die Öffnungsfunktion.
+
+function closeBasket() { // Reagiert auf den Schließen-Button.
+    const element = document.getElementById('basketModal'); // Sucht den Warenkorb-Dialog.
+    bootstrap.Modal.getOrCreateInstance(element).hide(); // Schließt den Bootstrap-Dialog.
+} // Ende der Schließfunktion.
+
+function releaseBasketFocus() { // Wird vor jedem Schließen ausgeführt.
+    document.activeElement.blur(); // Entfernt den Fokus vor dem Ausblenden.
+} // Ende der Funktion.
+
+function restoreBasketFocus() { // Wird nach jedem Schließen ausgeführt.
+    document.querySelector('.mobile-bottom-nav button').focus(); // Gibt den Fokus an den Warenkorbbutton zurück.
+} // Ende der Funktion.
+
+document.getElementById('basketModal').addEventListener('hide.bs.modal', releaseBasketFocus); // Entfernt den Fokus vor dem Schließen.
+document.getElementById('basketModal').addEventListener('hidden.bs.modal', restoreBasketFocus); // Setzt den Fokus nach dem Schließen zurück.
+
 function renderBasket() { // Entscheidet zwischen leerer und gefüllter Warenkorbansicht.
     let markup = createEmptyBasket(); // Speichert zunächst die HTML-Vorlage des Leerzustands.
     if (basket.length > 0) { // Prüft, ob mindestens eine Warenkorbposition vorhanden ist.
@@ -95,9 +116,21 @@ function renderBasket() { // Entscheidet zwischen leerer und gefüllter Warenkor
         const subtotal = calculateSubtotal(); // Berechnet den Warenwert einmal aus allen Warenkorbpositionen.
         markup = createFilledBasket(items, subtotal, calculateTotal(subtotal)); // Berechnet den Gesamtbetrag und übergibt beide Beträge an die HTML-Vorlage.
     } // Ende der Zustandsprüfung.
-
     document.getElementById('desktopBasket').innerHTML = markup; // Ersetzt den bisherigen HTML-Inhalt durch den aktuellen Warenkorbzustand.
+    renderMobileBasket(markup); // Aktualisiert den mobilen Warenkorb und seinen Mengenzähler.
 } // Ende der Warenkorb-Renderingfunktion.
+
+function renderMobileBasket(markup) { // Empfängt die erzeugte Warenkorbvorlage.
+    document.getElementById('mobileBasket').innerHTML = markup; // Aktualisiert die mobile Warenkorbanzeige.
+    let quantity = 0; // Initialisiert die gesamte Bestellmenge.
+    for (let i = 0; i < basket.length; i++) { // Durchläuft alle Warenkorbpositionen.
+        quantity += basket[i].quantity; // Addiert die Menge jeder Position.
+    } // Ende der Mengenermittlung.
+    const badge = document.getElementById('basketCount'); // Sucht das Anzeigeelement des Mengenzählers.
+    badge.textContent = quantity; // Zeigt die berechnete Gesamtmenge an.
+    badge.hidden = quantity === 0; // Blendet den Zähler bei einem leeren Warenkorb aus.
+    badge.parentElement.setAttribute('aria-label', 'Your Basket, ' + quantity + ' items'); // Ergänzt die Mengeninformation für Screenreader.
+} // Ende der mobilen Renderingfunktion.
 
 renderMenu(); // Startaufruf: Führt beim Laden von script.js das Rendering aller drei Kategorien aus.
 renderBasket(); // Zeigt den anfänglich leeren Korb an.

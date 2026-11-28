@@ -122,4 +122,53 @@
     /* Mobile Variante des Gerichtstitels. */
     display: inline; /* Blendet den mobilen Titel ein. */
   } /* Ende der mobilen Titelregel. */
+  /* MOBILE NAVIGATION */
+
+  .app-shell {
+    /* Übergeordneter Seitencontainer. */
+    padding-bottom: 78px; /* Reserviert Platz für die fixierte Navigationsleiste. */
+  } /* Ende der Containeranpassung. */
+
+  .mobile-bottom-nav {
+    /* Untere mobile Navigationsleiste. */
+    position: fixed; /* Fixiert die Navigation unabhängig vom Scrollen. */
+    bottom: 0; /* Positioniert die Navigation am unteren Bildschirmrand. */
+    left: 0; /* Positioniert die Navigation am linken Bildschirmrand. */
+    width: 100%; /* Nutzt die gesamte verfügbare Bildschirmbreite. */
+    height: 78px; /* Legt die Höhe der Navigationsleiste fest. */
+    background: var(
+      --dark
+    ); /* Übernimmt den dunkelgrauen Navigationshintergrund gemäß Figma. */
+    z-index: 10; /* Platziert die Navigation über dem normalen Seiteninhalt. */
+  } /* Ende der Navigationsgestaltung. */
+
+  .mobile-bottom-nav button {
+    /* Gestaltet den Warenkorbbutton. */
+    position: relative; /* Legt den Bezugspunkt für den Mengenzähler fest. */
+    border: 0; /* Entfernt den standardmäßigen Buttonrahmen. */
+    background: transparent; /* Entfernt den eigenen Buttonhintergrund. */
+  } /* Ende der Buttongestaltung. */
+
+  .basket-count {
+    /* Gestaltet den Mengenzähler am Warenkorbsymbol. */
+    position: absolute; /* Positioniert den Zähler relativ zum Warenkorbbutton. */
+    top: -4px; /* Verschiebt den Zähler an den oberen Rand. */
+    right: 0; /* Positioniert den Zähler rechts. */
+    min-width: 18px; /* Reserviert die Mindestbreite des Zählers. */
+    height: 18px; /* Legt die Höhe des Zählers fest. */
+    padding: 0 4px; /* Schafft Platz für mehrstellige Zahlen. */
+    border-radius: 20px; /* Rundet den Mengenzähler ab. */
+    background: var(--cream); /* Übernimmt den cremefarbenen Hintergrund. */
+    color: var(--orange); /* Stellt die Zahl orange dar. */
+    font-size: 14px; /* Legt die Schriftgröße fest. */
+    font-weight: 700; /* Stellt die Zahl fett dar. */
+    line-height: 18px; /* Zentriert die Zahl vertikal. */
+    text-align: center; /* Zentriert die Zahl horizontal. */
+  } /* Ende der Mengenzählergestaltung. */
+
+  .mobile-bottom-nav img {
+    /* Gestaltet alle vier Navigationssymbole. */
+    width: 30px; /* Legt die Symbolbreite fest. */
+    height: 30px; /* Legt die Symbolhöhe fest. */
+  } /* Ende der Symbolgestaltung. */
 } /* Beendet die Media Query und alle darin enthaltenen mobilen CSS-Regeln. */

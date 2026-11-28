@@ -179,3 +179,41 @@
   font-weight: 700; /* Stellt den Buttontext fett dar. */
   font-size: 24px; /* Legt die Schriftgröße des Buttontextes fest. */
 } /* Ende der Bestellbuttongestaltung. */
+
+/* MOBILER WARENKORB-DIALOG */
+
+.basket-modal-content {
+  /* Äußerer Container des mobilen Warenkorbs. */
+  background: var(--dark); /* Übernimmt die zentrale dunkle Hintergrundfarbe. */
+  color: var(--cream); /* Übernimmt die zentrale helle Textfarbe. */
+  width: min(343px, 100%); /* Begrenzt die Breite auf maximal 343px. */
+  height: min(
+    662px,
+    calc(100dvh - 32px)
+  ); /* Passt die Höhe an den sichtbaren Bildschirm an. dvh steht für Dynamic Viewport Height, 
+  also die aktuell verfügbare sichtbare Bildschirmhöhe unter Berücksichtigung der dynamischen Browserleisten. */
+  margin: 0 auto; /* Zentriert den Dialog horizontal. */
+  padding: 40px 16px 20px; /* Innenabstände: oben, seitlich und unten. */
+  border: 0; /* Entfernt den Bootstrap-Standardrahmen. */
+} /* Ende der Dialoggestaltung. */
+
+/* SCHLIESSEN-BUTTON */
+
+.basket-close {
+  /* Gestaltet den Schließen-Button des Dialogs. */
+  position: absolute; /* Positioniert den Button unabhängig vom Inhaltsfluss. */
+  top: 4px; /* Abstand zum oberen Dialogrand. */
+  right: 12px; /* Abstand zum rechten Dialogrand. */
+  border: 0; /* Entfernt den Buttonrahmen. */
+  background: transparent; /* Entfernt den eigenen Buttonhintergrund. */
+  color: var(--cream); /* Übernimmt die helle Textfarbe. */
+  font-size: 28px; /* Legt die Größe des Schließsymbols fest. */
+} /* Ende der Schließen-Button-Gestaltung. */
+
+/* MOBILES RENDERZIEL */
+
+#mobileBasket {
+  /* Wählt den mobilen HTML-Zielcontainer anhand seiner ID. */
+  flex: 1; /* Nutzt den verfügbaren Platz innerhalb des Dialogs. */
+  min-height: 0; /* Erlaubt dem Container, bei Platzmangel zu schrumpfen. */
+} /* Ende der mobilen Inhaltsgestaltung. */

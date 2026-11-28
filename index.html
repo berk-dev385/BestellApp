@@ -208,6 +208,64 @@
     </div>
     <!-- SHELL_END -->
 
+    <!-- MOBILE NAVIGATION -->
+    <nav
+      class="mobile-bottom-nav d-flex d-lg-none align-items-center justify-content-around"
+      aria-label="Navigation"
+    >
+      <!-- Zeigt die Navigation ausschließlich unterhalb von 992px an. -->
+      <a href="#top" aria-label="Home"
+        ><img src="assets/icons/home.svg" alt=""
+      /></a>
+      <!-- Springt zum Restaurantbereich. -->
+      <span aria-label="Profile"
+        ><img src="assets/icons/profile.svg" alt=""
+      /></span>
+      <!-- Zeigt das Profilmotiv ohne eigene Funktion. -->
+      <span aria-label="Orders"
+        ><img src="assets/icons/orders.svg" alt=""
+      /></span>
+      <!-- Zeigt das Bestellmotiv ohne eigene Funktion. -->
+      <button type="button" onclick="openBasket()" aria-label="Your Basket">
+        <img src="assets/icons/basket.svg" alt="" />
+        <span id="basketCount" class="basket-count" hidden>0</span>
+        <!-- Reserviert die Anzeige der gesamten Bestellmenge. -->
+      </button>
+      <!-- Ruft beim Klick die spätere Öffnungsfunktion auf. -->
+    </nav>
+    <!-- Ende der mobilen Navigation. -->
+
+    <!-- MOBILER WARENKORB-DIALOG -->
+    <div
+      class="modal"
+      id="basketModal"
+      tabindex="-1"
+      aria-label="Your Basket"
+      aria-hidden="true"
+    >
+      <!-- Erstellt einen Bootstrap-Dialog ohne Übergangsanimation. -->
+      <div class="modal-dialog modal-dialog-centered">
+        <!-- Zentriert den Dialog im Browserfenster. -->
+        <div class="modal-content basket-modal-content">
+          <!-- Container für die gestaltete Warenkorbfläche. -->
+          <button
+            class="basket-close"
+            type="button"
+            onclick="closeBasket()"
+            aria-label="Close"
+          >
+            ×
+          </button>
+          <!-- Ruft die spätere Schließfunktion auf. -->
+          <div id="mobileBasket"></div>
+          <!-- Reserviert das zweite HTML-Renderziel für den Warenkorb. -->
+        </div>
+        <!-- Ende der Dialogfläche. -->
+      </div>
+      <!-- Ende des Dialograhmens. -->
+    </div>
+    <!-- BASKET_MODAL_END -->
+
     <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
     <!-- Lädt die Bootstrap-Funktionalitäten. -->
     <script src="scripts/db.js"></script>
