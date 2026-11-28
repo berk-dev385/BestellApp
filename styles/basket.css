@@ -217,3 +217,38 @@
   flex: 1; /* Nutzt den verfügbaren Platz innerhalb des Dialogs. */
   min-height: 0; /* Erlaubt dem Container, bei Platzmangel zu schrumpfen. */
 } /* Ende der mobilen Inhaltsgestaltung. */
+
+/* BESTELLBESTÄTIGUNG */
+
+.confirmation-content {
+  /* Hauptcontainer des Bestätigungsdialogs. */
+  width: min(440px, 100%); /* Begrenzt die Breite auf maximal 440px. */
+  margin: 0 auto; /* Zentriert den Dialog horizontal. */
+  padding: 48px 20px 28px; /* Innenabstände oben, seitlich und unten. */
+  align-items: center; /* Zentriert alle enthaltenen Elemente horizontal. */
+  background: var(--dark); /* Übernimmt den dunkelgrauen Hintergrund. */
+  color: var(--cream); /* Übernimmt die cremefarbene Schriftfarbe. */
+  border: 0; /* Entfernt den Bootstrap-Standardrahmen. */
+  border-radius: 30px; /* Rundet die Ecken des Dialogs ab. */
+} /* Ende der Dialoggestaltung. */
+
+.confirmation-content img {
+  /* Lieferfahrzeug innerhalb des Dialogs. */
+  width: 80px; /* Legt die ursprüngliche Bildbreite fest. */
+  height: 57px; /* Legt die ursprüngliche Bildhöhe fest. */
+  object-fit: contain; /* Erhält die Proportionen des Bildmotivs. */
+  margin-bottom: 12px; /* Schafft Abstand zur Überschrift. */
+} /* Ende der Bildgestaltung. */
+
+.confirmation-content h2 {
+  /* Überschrift der Bestellbestätigung. */
+  font-size: 36px; /* Legt die Schriftgröße fest. */
+  font-weight: 700; /* Stellt die Überschrift fett dar. */
+  margin: 0; /* Entfernt standardmäßige Außenabstände. */
+} /* Ende der Überschriftengestaltung. */
+
+.confirmation-content p {
+  /* Hinweistext unterhalb der Überschrift. */
+  font-size: 24px; /* Legt die Schriftgröße fest. */
+  margin: 0; /* Entfernt standardmäßige Außenabstände. */
+} /* Ende der Textgestaltung. */

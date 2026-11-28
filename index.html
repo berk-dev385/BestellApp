@@ -266,6 +266,43 @@
     </div>
     <!-- BASKET_MODAL_END -->
 
+    <!-- BESTELLBESTÄTIGUNG -->
+    <div
+      class="modal"
+      id="confirmationModal"
+      tabindex="-1"
+      aria-labelledby="confirmationTitle"
+      aria-hidden="true"
+    >
+      <!-- Erstellt den Bestätigungsdialog ohne Übergangsanimation. -->
+      <div class="modal-dialog modal-dialog-centered">
+        <!-- Zentriert den Dialog im Browserfenster. -->
+        <div class="modal-content confirmation-content text-center">
+          <!-- Gruppiert und zentriert die Bestätigungsinhalte. -->
+          <button
+            type="button"
+            class="basket-close"
+            onclick="closeConfirmation()"
+            aria-label="Close"
+          >
+            ×
+          </button>
+          <!-- Verbindet den Schließen-Button mit der späteren JavaScript-Funktion. -->
+          <img src="assets/images/confirmation.webp" alt="" />
+          <!-- Lädt das originale Bestätigungsmotiv aus dem Asset-Ordner. -->
+          <h2 id="confirmationTitle">Order confirmed!</h2>
+          <!-- Zeigt die Überschrift und benennt den Dialog für Screenreader. -->
+          <p>Your food is on the way!</p>
+          <!-- Zeigt den vorgesehenen Bestätigungstext aus Figma. -->
+        </div>
+        <!-- Ende der Bestätigungsfläche. -->
+      </div>
+      <!-- Ende des Dialograhmens. -->
+    </div>
+    <!-- Ende des Bestätigungsdialogs. -->
+
+    <!-- CONFIRMATION_MODAL_END -->
+
     <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
     <!-- Lädt die Bootstrap-Funktionalitäten. -->
     <script src="scripts/db.js"></script>

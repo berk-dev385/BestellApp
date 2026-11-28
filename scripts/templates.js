@@ -57,7 +57,7 @@ function createBasketSummary(subtotal, total) { // Empfängt berechnete Zwischen
     <div class="basket-total-line"><span>Subtotal</span><span>${formatPrice(subtotal)}</span></div> <!-- Zeigt die formatierte Zwischensumme. -->
     <div class="basket-total-line"><span>Delivery fee</span><span>${formatPrice(deliveryFeeCents)}</span></div> <!-- Zeigt die Liefergebühr aus db.js. -->
     <div class="basket-grand-total"><span>Total</span><span>${formatPrice(total)}</span></div> <!-- Zeigt die formatierte Gesamtsumme. -->
-    <button type="button" class="basket-buy">Buy now (${formatPrice(total)})</button> <!-- Erstellt den Bestellbutton mit Gesamtpreis. -->
+    <button type="button" class="basket-buy" onclick="finishOrder()">Buy now (${formatPrice(total)})</button> <!-- Startet beim Klick den lokalen Testbestellablauf. -->
   </div>`; // Gibt die vollständige Summenvorlage als HTML-String zurück.
 } // Ende der Summenvorlage.
 
